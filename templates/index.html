@@ -1,120 +1,112 @@
 <html>
-<head>
-<div class="modal-header">
-<h1 class="modal-title">Cricket Score Prediction</h1>
-<br>
-</br>
 
-</div>
+  <head>
+    <div class="modal-header">
+      <h1 class="modal-title">Cricket Score Prediction</h1>
+      <br>
+      </br>
 
-    
-        <label for="field1">Batting Team:</label>
-        <select id="select">
-            <option value="default"></option>
-        </select>
-        
-        <script>
-            
-            var select = document.getElementById("select"),
-                     arr =["Australia","India","Bangladesh","New Zealand","South Africa","England","West Indies","Afghanistan","Pakistan","Sri Lanka"]; 
-             
-             for(var i = 0; i < arr.length; i++)
-             {
-                 var option = document.createElement("OPTION"), //<option value="New Zealand">New Zealand</option>...
-                     txt = document.createTextNode(arr[i]); //"Bangladesh","New Zealand",....
-			    
-                 option.appendChild(txt);
-				 console.log("A");
-				 console.log(i);
-				 console.log(txt);
-				 
-                 option.setAttribute("value",arr[i]);
-                 select.insertBefore(option,select.lastChild);
-             }
-             
-        </script>
-    
-	
-	
-        <label for="field2">Bowling Team:</label>
-        <select id="select2">
-            <option value="default"></option>
-        </select>
-        
-        <script>
-            
-            var select = document.getElementById("select2"),
-                     arr =["Australia","India","Bangladesh","New Zealand","South Africa","England","West Indies","Afghanistan","Pakistan","Sri Lanka"]; 
-             
-             for(var i = 0; i < arr.length; i++)
-             {
-                 var option = document.createElement("OPTION"), //<option value="New Zealand">New Zealand</option>...
-                     txt = document.createTextNode(arr[i]); //"Bangladesh","New Zealand",....
-			    
-                 option.appendChild(txt);
-				 console.log("B");
-				 console.log(txt);
-				 console.log(option.setAttribute("value",arr[i]));
-                 option.setAttribute("value",arr[i]);
-                 select.insertBefore(option,select.lastChild);
-             }
-             
-        </script>
-    
-	
-	
-        <label for="field3">Cities:</label>
-        <select id="select3">
-            <option value="default"></option>
-        </select>
-        
-        <script>
-            
-            var select = document.getElementById("select3"),
-                     arr =["Colombo", "Mirpur", "Johannesburg", "Dubai", "Auckland", "Cape Town", "London", "Pallekele", "Barbados", "Sydney", "Melbourne", "Durban", "St Lucia", "Wellington", "Lauderhill", "Hamilton", "Centurion", "Manchester", "Abu Dhabi", "Mumbai", "Nottingham", "Southampton", "Mount Maunganui", "Chittagong", "Kolkata", "Lahore", "Delhi", "Nagpur", "Chandigarh", "Adelaide", "Bangalore", "St Kitts", "Cardiff", "Christchurch", "Trinidad"];
-             
-             for(var i = 0; i < arr.length; i++)
-             {
-                 var option = document.createElement("OPTION"), 
-                     txt = document.createTextNode(arr[i]); 
-			    
-                 option.appendChild(txt);
-				 console.log("B");
-				 console.log(txt);
-				 console.log(option.setAttribute("value",arr[i]));
-                 option.setAttribute("value",arr[i]);
-                 select.insertBefore(option,select.lastChild);
-             }
-             
-        </script>
-    
-<div>
-</div>
-<br>
-</br>
-<label for="quantity">Current Score:</label>
-<input type="number" id="quantity" name="quantity" min="1" >     
+    </div>
 
-<label for="quantity">Overs Done(works for >5):</label>
-<input type="number" id="quantity" name="quantity" min="5" >  
 
-<label for="quantity">Wickets Out:</label>
-<input type="number" id="quantity" name="quantity" min="0" >  
+    <label for="field1">Batting Team:</label>
+    <select id="select">
+      <option value="default"></option>
+    </select>
 
-<label for="quantity">Runs in last 5 overs:</label>
-<input type="number" id="quantity" name="quantity" min="0" >     
+    <script>
+      var select = document.getElementById("select"),
+        arr = ["Australia", "India", "Bangladesh", "New Zealand", "South Africa", "England", "West Indies", "Afghanistan", "Pakistan", "Sri Lanka"];
 
-<br>
-</br>
+      for (var i = 0; i < arr.length; i++) {
+        var option = document.createElement("OPTION"), //<option value="New Zealand">New Zealand</option>...
+          txt = document.createTextNode(arr[i]); //"Bangladesh","New Zealand",....
 
-<form action="{{ url_for('getprediction')}}"method="post">
-<button type="submit" class="btn btn-primary btn-block btn-large">Predict Score</button>
-</form>
+        option.appendChild(txt);
+        console.log("A");
+        console.log(i);
+        console.log(txt);
 
-</head>
-<body>
+        option.setAttribute("value", arr[i]);
+        select.insertBefore(option, select.lastChild);
+      }
 
-        
+    </script>
 
-    </body>
+
+
+    <label for="field2">Bowling Team:</label>
+    <select id="select2">
+      <option value="default"></option>
+    </select>
+
+    <script>
+      var select = document.getElementById("select2"),
+        arr = ["Australia", "India", "Bangladesh", "New Zealand", "South Africa", "England", "West Indies", "Afghanistan", "Pakistan", "Sri Lanka"];
+
+      for (var i = 0; i < arr.length; i++) {
+        var option = document.createElement("OPTION"), //<option value="New Zealand">New Zealand</option>...
+          txt = document.createTextNode(arr[i]); //"Bangladesh","New Zealand",....
+
+        option.appendChild(txt);
+        console.log("B");
+        console.log(txt);
+        console.log(option.setAttribute("value", arr[i]));
+        option.setAttribute("value", arr[i]);
+        select.insertBefore(option, select.lastChild);
+      }
+
+    </script>
+
+
+
+    <label for="field3">Cities:</label>
+    <select id="select3">
+      <option value="default"></option>
+    </select>
+
+    <script>
+      var select = document.getElementById("select3"),
+        arr = ["Colombo", "Mirpur", "Johannesburg", "Dubai", "Auckland", "Cape Town", "London", "Pallekele", "Barbados", "Sydney", "Melbourne", "Durban", "St Lucia", "Wellington", "Lauderhill", "Hamilton", "Centurion", "Manchester", "Abu Dhabi", "Mumbai", "Nottingham", "Southampton", "Mount Maunganui", "Chittagong", "Kolkata", "Lahore", "Delhi", "Nagpur", "Chandigarh", "Adelaide", "Bangalore", "St Kitts", "Cardiff", "Christchurch", "Trinidad"];
+
+      for (var i = 0; i < arr.length; i++) {
+        var option = document.createElement("OPTION"),
+          txt = document.createTextNode(arr[i]);
+
+        option.appendChild(txt);
+        console.log("B");
+        console.log(txt);
+        console.log(option.setAttribute("value", arr[i]));
+        option.setAttribute("value", arr[i]);
+        select.insertBefore(option, select.lastChild);
+      }
+
+    </script>
+
+    <div>
+    </div>
+    <br>
+    </br>
+    <label for="quantity">Current Score:</label>
+    <input type="number" id="quantity" name="quantity" min="1">
+
+    <label for="quantity">Overs Done(works for >5):</label>
+    <input type="number" id="quantity" name="quantity" min="5">
+
+    <label for="quantity">Wickets Out:</label>
+    <input type="number" id="quantity" name="quantity" min="0">
+
+    <label for="quantity">Runs in last 5 overs:</label>
+    <input type="number" id="quantity" name="quantity" min="0">
+
+    <button type="submit" class="btn btn-primary btn-block btn-large">getprediction</button>
+
+  </head>
+
+  <body>
+
+
+
+  </body>
+
 </html>
