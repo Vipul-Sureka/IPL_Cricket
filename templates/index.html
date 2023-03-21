@@ -98,12 +98,13 @@
 
     <label for="quantity">Runs in last 5 overs:</label>
     <input type="number" id="quantity" name="quantity" min="0">
-    
+
     <br>
     </br>
 
-    <button type="submit" class="btn btn-primary btn-block btn-large">getprediction</button>
-
+    <form action="{{ url_for('getprediction')}}" method="post">
+      <button type="submit" class="btn btn-primary btn-block btn-large">getprediction</button>
+    </form>
   </head>
 
   <body>
