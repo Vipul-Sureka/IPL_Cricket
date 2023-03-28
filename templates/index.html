@@ -8,13 +8,15 @@
 
     </div>
 
-    <form action="{{ url_for('getprediction')}}" method="post">
-      <label for="field1">Batting Team:</label>
-      <select id="select">
-        <option value="default"></option>
-      </select>
-
-      <script>
+    
+	<form action="{{ url_for('getprediction')}}" method="post">
+	
+    <label for="field1">Batting Team:</label>
+    <input type="text" name="Batting Team" list="select">
+    <datalist id="select">
+      <option value=""></option>
+    </datalist>
+	<script>
         var select = document.getElementById("select"),
           arr = ["Australia", "India", "Bangladesh", "New Zealand", "South Africa", "England", "West Indies", "Afghanistan", "Pakistan", "Sri Lanka"];
 
@@ -23,24 +25,19 @@
             txt = document.createTextNode(arr[i]); //"Bangladesh","New Zealand",....
 
           option.appendChild(txt);
-          console.log("A");
-          console.log(i);
-          console.log(txt);
-
           option.setAttribute("value", arr[i]);
           select.insertBefore(option, select.lastChild);
         }
 
       </script>
-
-
+	
 
       <label for="field2">Bowling Team:</label>
-      <select id="select2">
-        <option value="default"></option>
-      </select>
-
-      <script>
+    <input type="text" name="Bowling Team" list="select2">
+    <datalist id="select2">
+      <option value=""></option>
+    </datalist>
+	<script>
         var select = document.getElementById("select2"),
           arr = ["Australia", "India", "Bangladesh", "New Zealand", "South Africa", "England", "West Indies", "Afghanistan", "Pakistan", "Sri Lanka"];
 
@@ -49,9 +46,6 @@
             txt = document.createTextNode(arr[i]); //"Bangladesh","New Zealand",....
 
           option.appendChild(txt);
-          console.log("B");
-          console.log(txt);
-          console.log(option.setAttribute("value", arr[i]));
           option.setAttribute("value", arr[i]);
           select.insertBefore(option, select.lastChild);
         }
@@ -61,10 +55,10 @@
 
 
       <label for="field3">Cities:</label>
-      <select id="select3">
-        <option value="default"></option>
-      </select>
-
+    <input type="text" name="Cities" list="select3">
+    <datalist id="select3">
+      <option value=""></option>
+    </datalist>
       <script>
         var select = document.getElementById("select3"),
           arr = ["Colombo", "Mirpur", "Johannesburg", "Dubai", "Auckland", "Cape Town", "London", "Pallekele", "Barbados", "Sydney", "Melbourne", "Durban", "St Lucia", "Wellington", "Lauderhill", "Hamilton", "Centurion", "Manchester", "Abu Dhabi", "Mumbai", "Nottingham", "Southampton", "Mount Maunganui", "Chittagong", "Kolkata", "Lahore", "Delhi", "Nagpur", "Chandigarh", "Adelaide", "Bangalore", "St Kitts", "Cardiff", "Christchurch", "Trinidad"];
@@ -74,9 +68,6 @@
             txt = document.createTextNode(arr[i]);
 
           option.appendChild(txt);
-          console.log("B");
-          console.log(txt);
-          console.log(option.setAttribute("value", arr[i]));
           option.setAttribute("value", arr[i]);
           select.insertBefore(option, select.lastChild);
         }
